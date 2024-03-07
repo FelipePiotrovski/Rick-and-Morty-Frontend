@@ -1,0 +1,9 @@
+.loader_container {
+    width: 184px;
+    height: 250px;
+    top: -32px;
+    left: 185px;
+    display: flex;
+    justify-content: center;
+    color: aqua;
+}
