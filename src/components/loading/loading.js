@@ -7,7 +7,7 @@ function Loading() {
   return (
     <div className={styles.loader_container}>
       <img src={loadingImage} alt="Loading" /> {/* Usando a variável loadingImage como src */}
-      <h2>Loading</h2>
+      <h2>Qualquercoisa</h2>
     </div>
   );
 }
