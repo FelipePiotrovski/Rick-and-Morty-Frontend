@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../../image-1.png';
 import '../../style.css';
 import CharactersCard from '../Card/characterscard.js';
+import Modal from '../modal/modal.jsx';
 import Loading from '../loading/loading.js';
 
 
@@ -24,6 +25,33 @@ function MainContainer({ searchTerm, setSearchTerm, handleSearch, errorMessage, 
     return pages;
   };
 
+  const [showModal, setShowModal] = useState(false);
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
+
+  const handleCharacterClick = (id) => {
+    fetch(`http://127.0.0.1:5000/character/${id}`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          setSelectedCharacter(data.data);
+          setShowModal(true);
+        } else {
+          setSelectedCharacter(null);
+          alert('erro');
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+        setSelectedCharacter(null);
+      })
+  };
+
+  const handleCloseModal = () => {
+    setSelectedCharacter(null);
+    setShowModal(false);
+  };
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -43,7 +71,13 @@ function MainContainer({ searchTerm, setSearchTerm, handleSearch, errorMessage, 
       </div>
       {errorMessage && <p>{errorMessage}</p>}
 
-      <CharactersCard characters={characters} />
+      <CharactersCard characters={characters} onCharacterClick={handleCharacterClick} />
+
+      {/* Renderizando o modal se showModal for verdadeiro */}
+      {showModal && (
+        <Modal handleCloseModal={handleCloseModal} selectedCharacter={selectedCharacter} />
+      )}
+
 
       {/* Renderização dos botões de paginação */}
       {totalPages > 1 && (

@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import styles from './loading.module.css'; // Importando o arquivo CSS do módulo
-import loadingImage from './loading.jpeg'; // Importando a imagem de carregamento
+import styles from './loading.module.css';
+import loadingImage from './loading.jpeg';
 
 function Loading() {
 
   return (
-    <div className={styles.loader_container}>
-      <img src={loadingImage} alt="Loading" /> {/* Usando a variável loadingImage como src */}
-      <h2>Qualquercoisa</h2>
+    <div className={styles.loading_background}>
+      <div className={styles.loader_container}>
+        <img className={styles.loader_container_img} src={loadingImage} alt="Loading" />
+        <h2>Loading</h2>
+      </div>
     </div>
   );
 }
+
 
 export default Loading;
