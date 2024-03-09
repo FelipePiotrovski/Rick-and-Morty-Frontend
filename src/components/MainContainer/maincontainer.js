@@ -37,12 +37,13 @@ function MainContainer({ searchTerm, setSearchTerm, handleSearch, errorMessage, 
           setShowModal(true);
         } else {
           setSelectedCharacter(null);
-          alert('erro');
+          setShowModal(true);
         }
       })
       .catch(error => {
         console.error('Error fetching data:', error);
         setSelectedCharacter(null);
+        setShowModal(true);
       })
   };
 
@@ -71,7 +72,7 @@ function MainContainer({ searchTerm, setSearchTerm, handleSearch, errorMessage, 
       </div>
       {errorMessage && <p>{errorMessage}</p>}
 
-      <CharactersCard characters={characters} onCharacterClick={handleCharacterClick} />
+      <CharactersCard characters={characters} handleCharacterClick={handleCharacterClick} />
 
       {/* Renderizando o modal se showModal for verdadeiro */}
       {showModal && (

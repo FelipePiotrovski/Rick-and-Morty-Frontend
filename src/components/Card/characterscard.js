@@ -1,11 +1,11 @@
 import React from 'react';
 
-function CharactersCard({ characters, onCharacterClick }) {
+function CharactersCard({ characters, handleCharacterClick }) {
 
   return (
     <div>
       {characters.map(character => (
-        <div className={`characters ${character.status === 'Dead' ? 'dead-character' : ''}`} key={character.id} onClick={() => onCharacterClick(character.id)}>
+        <div className={`characters ${character.status === 'Dead' ? 'dead-character' : ''}`} key={character.id} onClick={() => handleCharacterClick(character.id)}>
           <img className="charimg" src={character.image} alt={character.name} />
           <div className="overlay">
             <p className="charimg_character_name">{character.name}</p>
