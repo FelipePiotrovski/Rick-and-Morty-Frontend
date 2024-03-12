@@ -3,7 +3,7 @@ import React from 'react';
 function CharactersCard({ characters, handleCharacterClick }) {
 
   return (
-    <div>
+    <div className='characters_card'>
       {characters.map(character => (
         <div className={`characters ${character.status === 'Dead' ? 'dead-character' : ''}`} key={character.id} onClick={() => handleCharacterClick(character.id)}>
           <img className="charimg" src={character.image} alt={character.name} />

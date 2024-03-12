@@ -8,23 +8,6 @@ import Loading from '../loading/loading.js';
 
 function MainContainer({ searchTerm, setSearchTerm, handleSearch, errorMessage, characters, totalPages, currentPage, handlePageChange, goToPreviousPage, goToNextPage, removeLoading, setRemoveLoading }) {
 
-  const renderPaginationButtons = () => {
-    const pages = [];
-    const totalPagesToShow = 5; // Número total de páginas para mostrar
-    const startPage = Math.max(1, currentPage - 2); // Início da faixa de páginas a serem exibidas
-    const endPage = Math.min(totalPages, startPage + totalPagesToShow - 1); // Fim da faixa de páginas a serem exibidas
-
-    for (let i = startPage; i <= endPage; i++) {
-      pages.push(
-        <button key={i} onClick={() => handlePageChange(i)} className={currentPage === i ? 'active' : ''}>
-          {i}
-        </button>
-      );
-    }
-
-    return pages;
-  };
-
   const [showModal, setShowModal] = useState(false);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
 
@@ -50,6 +33,23 @@ function MainContainer({ searchTerm, setSearchTerm, handleSearch, errorMessage, 
   const handleCloseModal = () => {
     setSelectedCharacter(null);
     setShowModal(false);
+  };
+
+  const renderPaginationButtons = () => {
+    const pages = [];
+    const totalPagesToShow = 5; // Número total de páginas para mostrar
+    const startPage = Math.max(1, currentPage - 2); // Início da faixa de páginas a serem exibidas
+    const endPage = Math.min(totalPages, startPage + totalPagesToShow - 1); // Fim da faixa de páginas a serem exibidas
+
+    for (let i = startPage; i <= endPage; i++) {
+      pages.push(
+        <button key={i} onClick={() => handlePageChange(i)} className={currentPage === i ? 'active' : ''}>
+          {i}
+        </button>
+      );
+    }
+
+    return pages;
   };
 
 

@@ -5,12 +5,21 @@ html {
   font-size: 16px;
   background-image: url(./Background.png);
   background-size: cover;
+  background-repeat: no-repeat ;
+  background-color: rgb(3, 3, 3);
   width: auto;
   height: 900px;
   text-align: center;
+
 }
 
-.search-input, .search-button {
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+.search-input,
+.search-button {
   font-size: 16px;
   color: white;
   background-color: transparent;
@@ -20,16 +29,23 @@ html {
   margin: 8px;
 }
 
+.characters_card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+}
+
 .characters {
   position: relative;
   display: inline-block;
+  width: 200px;
   margin: 10px;
   border: 5px solid transparent;
   border-radius: 10px;
 }
 
 .charimg {
-  width: 200px;
+  width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 5px;
@@ -53,14 +69,12 @@ html {
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
-  
 }
 
 .overlay p {
   margin: 1px 0;
   color: white;
   text-align: center;
-  /* Centraliza o texto horizontalmente */
 }
 
 .charimg_character_name {
@@ -85,27 +99,30 @@ html {
 /* Adicione ou atualize estas regras CSS no seu arquivo de estilos (style.css) ou componente */
 
 .pagination {
-  margin-top: 20px; /* Ajuste conforme necessário */
-  display: flex; /* Adiciona flexbox para alinhar os botões */
+  margin-top: 20px;
+  /* Ajuste conforme necessário */
+  display: flex;
+  /* Adiciona flexbox para alinhar os botões */
 
   text-align: center;
   justify-content: center;
-  
+
 }
 
 .pagination button {
   font-size: 16px;
-    font-family: Nunito, sans-serif;
+  font-family: Nunito, sans-serif;
   background: none;
   border: none;
   cursor: pointer;
   padding: 5px 10px;
   margin: 0 2px;
-  color: #828282ac;  
+  color: #828282ac;
 }
 
 .pagination button.active {
-  color: #c9d636; /* Cor para a página selecionada */
+  color: #c9d636;
+  /* Cor para a página selecionada */
   filter: none;
 }
 
@@ -120,7 +137,7 @@ html {
 
 .pagination button:last-child svg {
   width: 15px;
- 
+
   height: 24.54px;
   top: 1809px;
   left: 910px;
@@ -132,7 +149,8 @@ html {
 
 /* Ajustar o espaçamento entre os botões */
 .pagination button {
-  margin: 0 5px; /* Ajuste conforme necessário */
+  margin: 0 5px;
+  /* Ajuste conforme necessário */
 }
 
 .pagination_prev {
@@ -143,7 +161,8 @@ html {
 
 .pagination-prev path,
 .pagination-next svg {
-  stroke: #828282ac; /* Cor cinza para as setas */
+  stroke: #828282ac;
+  /* Cor cinza para as setas */
 }
 
 .pagination-prev.disabled svg {
