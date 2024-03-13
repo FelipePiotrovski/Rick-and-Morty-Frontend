@@ -1,10 +1,11 @@
 import React from 'react';
 import './modal.css';
 function Modal({ handleCloseModal, selectedCharacter }) {
-  const getGenderPronoun = () => {
-    return selectedCharacter.gender === "Female" ? "She" : "He";
+  
+  // const getGenderPronoun = () => {
+  //   return selectedCharacter.gender === "Female" ? "She" : "He";
 
-  };
+  // };
 
   const switchstat = (status, gender) => {
     switch (status) {
@@ -28,7 +29,7 @@ function Modal({ handleCloseModal, selectedCharacter }) {
             return 'He is dead'
         }
 
-      case 'unknown':
+      default:
         switch (gender) {
           case 'Male':
             return 'We don\'t know if he is alive or dead'
