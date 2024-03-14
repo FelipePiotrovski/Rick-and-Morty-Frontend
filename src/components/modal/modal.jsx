@@ -2,44 +2,19 @@ import React from 'react';
 import './modal.css';
 function Modal({ handleCloseModal, selectedCharacter }) {
   
-  // const getGenderPronoun = () => {
-  //   return selectedCharacter.gender === "Female" ? "She" : "He";
+  const getGenderPronoun = () => {
+    return selectedCharacter.gender === "Female" ? "She" : "He";
 
-  // };
-
+  };
   const switchstat = (status, gender) => {
-    switch (status) {
-      case 'Alive':
-        switch (gender) {
-          case 'Male':
-            return 'He is alive and well'
-          case 'Female':
-            return 'She is alive and well'
-          default:
-            return 'He is alive and well'
-        }
-
-      case 'Dead':
-        switch (gender) {
-          case 'Male':
-            return 'He is dead'
-          case 'Female':
-            return 'She is dead'
-          default:
-            return 'He is dead'
-        }
-
-      default:
-        switch (gender) {
-          case 'Male':
-            return 'We don\'t know if he is alive or dead'
-          case 'Female':
-            return 'We don\'t know if she is alive or dead'
-          default:
-            return 'We don\'t know if its alive or dead'
-        }
+    if (status === 'Alive') {
+      return selectedCharacter.gender === 'Female' ? 'She is alive and well' : 'He is alive and well';
+    } else if (status === 'Dead') {
+      return selectedCharacter.gender === 'Female' ? 'She is dead' : 'He is dead';
+    } else {
+      return "It can't be told if is alive or dead";
     }
-  }
+  };
 
   return (
     <div className='modal_background'>
@@ -71,16 +46,16 @@ function Modal({ handleCloseModal, selectedCharacter }) {
         <div className='modal_right'>
           <div className='modal_about'>
             <h1 className='modal_title'>ABOUT</h1>
-            <h2>
-              {selectedCharacter.name} is a {selectedCharacter.gender} {selectedCharacter.species}. {switchstat(selectedCharacter.status, selectedCharacter.gender)}
+            <h2 className='modal_about'>
+              {selectedCharacter.name} is a {selectedCharacter.gender} {selectedCharacter.type} {selectedCharacter.species}. {switchstat(selectedCharacter.status, selectedCharacter.gender)}
             </h2>
 
             <h1 className='modal_title'>ORIGIN</h1>
-            <h3>Planet</h3>
-            <h2>{selectedCharacter.origin_name}</h2>
+            <h3 className='modal_subtitle'>Planet</h3>
+            <h2 className='modal_planet'>{selectedCharacter.origin_name}</h2>
 
             <h1 className='modal_title'>LOCATION</h1>
-            <h2>{selectedCharacter.location_name}</h2>
+            <h2 className='modal_location'>{selectedCharacter.location_name}</h2>
 
           </div>
         </div>

@@ -23,43 +23,30 @@
   display: flex;
   position: relative;
   flex-direction: row;
-  height: 800px;
-  width: 1000px;
-
-}
-
-
-
-
-.modal_title {
-  font-family: Nunito, sans-serif;
-  font-weight: 400;
-  letter-spacing: 13px;
-  color: #C9D636;
-  font-size: 13px;
-
+  height: 799px;
+  width: 1034px;
+  border-radius: 18px;
 }
 
 .modal_description {
   font-size: 14px;
 }
 
-.modal_planet {
-  font-size: 28px;
-}
+
 
 
 .modal_left {
   position: relative;
   overflow: hidden;
+  border-radius: 18px 0 0 18px;
 }
 
 .modal_right {
   width: 64.5rem;
-  background-color: black;
   padding: 10px;
-  margin-left: 100px;
-
+  margin-left: 62px;
+  padding-right: 100px;
+  border-radius: 0 18px 18px 0;
 }
 
 
@@ -67,8 +54,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  margin: none;
-  padding: none;
   filter: blur(50px);
 }
 
@@ -104,6 +89,42 @@
   font-weight: 700;
 }
 
+
+
+.modal_title {
+  font-family: Nunito, sans-serif;
+  font-weight: 400;
+  letter-spacing: 13px;
+  color: #C9D636;
+  font-size: 13px;
+  margin-top: 60px;
+
+}
+
+
+.modal_about {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.modal_planet {
+  font-size: 28px;
+  margin-top: 1px;
+}
+
+.modal_location {
+  font-size: 28px;
+  margin-top: 1px;
+}
+
+
+.modal_subtitle {
+  color: rgba(140, 140, 140, 1); 
+  font-size: 14px;
+  margin: 1px;
+  margin-top: 30px;
+}
+
 .modal_charimg_overlay h3 {
   font-size: 12px;
   font-weight: 400;
@@ -111,13 +132,13 @@
 
 
 .closebutton {
-  font-size: 24px;
+  font-size: 16px;
   color: white;
   background-color: transparent;
   border: 2px solid white;
   border-radius: 8px;
-  padding: 2px;
-  margin: 8px;
+  padding: 10px;
+  margin: 20px;
 }
 
 .closebutton:hover {
