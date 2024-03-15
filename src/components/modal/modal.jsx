@@ -3,7 +3,16 @@ import './modal.css';
 function Modal({ handleCloseModal, selectedCharacter }) {
   
   const getGenderPronoun = () => {
-    return selectedCharacter.gender === "Female" ? "She" : "He";
+    return selectedCharacter.gender === "Female" ? "She is " : "He";
+
+
+    //{selectedCharacter.name} is a {selectedCharacter.gender} {selectedCharacter.type} {selectedCharacter.species}. {selectedCharacter.gender} is {selectedCharacter.status} and well
+   //She is a female human.  ------ She is alive and well
+  // var phrase = `Is ${status} and well`;
+
+
+
+  
 
   };
   const switchstat = (status, gender) => {
@@ -12,7 +21,7 @@ function Modal({ handleCloseModal, selectedCharacter }) {
     } else if (status === 'Dead') {
       return selectedCharacter.gender === 'Female' ? 'She is dead' : 'He is dead';
     } else {
-      return "It can't be told if is alive or dead";
+      return `It can't be told if ${selectedCharacter.gender} is alive or dead`;
     }
   };
 

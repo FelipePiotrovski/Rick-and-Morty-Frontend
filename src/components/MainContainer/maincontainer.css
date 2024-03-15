@@ -1,0 +1,72 @@
+.pagination {
+    margin-top: 20px;
+    /* Ajuste conforme necessário */
+    display: flex;
+    /* Adiciona flexbox para alinhar os botões */
+
+    text-align: center;
+    justify-content: center;
+
+}
+
+.pagination button {
+    font-size: 16px;
+    font-family: Nunito, sans-serif;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 0 2px;
+    color: #828282ac;
+}
+
+.pagination button.active {
+    color: #c9d636;
+    /* Cor para a página selecionada */
+    filter: none;
+}
+
+.pagination button:first-child svg {
+    transform: rotate(180deg);
+    width: 15px;
+    height: 24.54px;
+    top: 1809px;
+    left: 910px;
+    border: 2px;
+}
+
+.pagination button:last-child svg {
+    width: 15px;
+
+    height: 24.54px;
+    top: 1809px;
+    left: 910px;
+    border: 2px;
+}
+
+
+
+
+/* Ajustar o espaçamento entre os botões */
+.pagination button {
+    margin: 0 5px;
+    /* Ajuste conforme necessário */
+}
+
+.pagination_prev {
+    color: #C9D636;
+}
+
+/* styles.css */
+
+.pagination-prev path,
+.pagination-next svg {
+    stroke: #828282ac;
+    /* Cor cinza para as setas */
+}
+
+.pagination-prev.disabled svg {
+    transform: rotate(180deg);
+}
+
+/* Você pode adicionar estilos adicionais para a seta seguinte conforme necessário */

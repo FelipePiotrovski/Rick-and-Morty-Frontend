@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import logo from '../../image-1.png';
+import logo from '../../img/image-1.png';
 import '../../style.css';
+import'./maincontainer.css';
 import CharactersCard from '../Card/characterscard.js';
 import Modal from '../modal/modal.jsx';
 import Loading from '../loading/loading.js';

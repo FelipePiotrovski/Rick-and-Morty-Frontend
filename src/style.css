@@ -3,170 +3,33 @@
 html {
   font-family: Nunito, sans-serif;
   font-size: 16px;
-  background-image: url(./Background.png);
+  background-image: url(../src/img/Background.png);
   background-size:cover;
   background-color: rgba(3, 3, 3);
   background-repeat: no-repeat ;
   width: auto;
   height: 900px;
   text-align: center;
-
 }
 
 ::-webkit-scrollbar {
   display: none;
 }
 
-
 .search-input,
 .search-button {
   font-size: 16px;
+  font-weight: 700;
   color: white;
   background-color: transparent;
   border: 2px solid white;
   border-radius: 8px;
-  padding: 2px;
-  margin: 8px;
+  padding: 10px;
+  margin: 70px  8px 70px 8px;
 }
 
-.characters_card {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-items: center;
-}
-
-.characters {
-  position: relative;
-  display: inline-block;
-  width: 200px;
-  margin: 10px;
-  border: 5px solid transparent;
-  border-radius: 10px;
-}
-
-.charimg {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-.characters:hover {
-
-  border-color: #C9D636;
-  box-shadow: 0px 0px 5px 4px #C9D636;
-
-}
-
-
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 1px;
-  margin: 0;
-  box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(10px);
-}
-
-.overlay p {
-  margin: 1px 0;
-  color: white;
-  text-align: center;
-}
-
-.charimg_character_name {
-  font-size: 20px;
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.charimg_character_species,
-.charimg_character_status {
-  margin: 0;
-}
-
-
-.dead-character .charimg {
-  filter: grayscale(100%);
-}
-
-
-/* Adicione ou atualize estas regras CSS no seu arquivo de estilos (style.css) ou componente */
-
-.pagination {
-  margin-top: 20px;
-  /* Ajuste conforme necessário */
-  display: flex;
-  /* Adiciona flexbox para alinhar os botões */
-
-  text-align: center;
-  justify-content: center;
-
-}
-
-.pagination button {
-  font-size: 16px;
-  font-family: Nunito, sans-serif;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px 10px;
-  margin: 0 2px;
-  color: #828282ac;
-}
-
-.pagination button.active {
-  color: #c9d636;
-  /* Cor para a página selecionada */
-  filter: none;
-}
-
-.pagination button:first-child svg {
-  transform: rotate(180deg);
-  width: 15px;
-  height: 24.54px;
-  top: 1809px;
-  left: 910px;
-  border: 2px;
-}
-
-.pagination button:last-child svg {
-  width: 15px;
-
-  height: 24.54px;
-  top: 1809px;
-  left: 910px;
-  border: 2px;
-}
-
-
-
-
-/* Ajustar o espaçamento entre os botões */
-.pagination button {
-  margin: 0 5px;
-  /* Ajuste conforme necessário */
-}
-
-.pagination_prev {
+.search-button:hover {
   color: #C9D636;
+  border-color: #C9D636;
+  box-shadow: 0 0.6rem 0.7rem #c9d6363b;
 }
-
-/* styles.css */
-
-.pagination-prev path,
-.pagination-next svg {
-  stroke: #828282ac;
-  /* Cor cinza para as setas */
-}
-
-.pagination-prev.disabled svg {
-  transform: rotate(180deg);
-}
-
-/* Você pode adicionar estilos adicionais para a seta seguinte conforme necessário */
