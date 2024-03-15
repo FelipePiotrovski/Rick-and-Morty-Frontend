@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Card/characterscard.css'
+import './characterscard.css'
 
 
 function CharactersCard({ characters, handleCharacterClick }) {
