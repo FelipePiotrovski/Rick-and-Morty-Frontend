@@ -17,11 +17,11 @@ function Modal({ handleCloseModal, selectedCharacter }) {
   };
   const switchstat = (status, gender) => {
     if (status === 'Alive') {
-      return selectedCharacter.gender === 'Female' ? 'She is alive and well' : 'He is alive and well';
+      return selectedCharacter.gender === 'Female' ? 'She is alive and well' : 'He is alive and well.';
     } else if (status === 'Dead') {
-      return selectedCharacter.gender === 'Female' ? 'She is dead' : 'He is dead';
+      return selectedCharacter.gender === 'Female' ? 'She is dead' : 'He is dead.';
     } else {
-      return `It can't be told if ${selectedCharacter.gender} is alive or dead`;
+      return `It can't be told if ${selectedCharacter.gender} is alive or dead.`;
     }
   };
 

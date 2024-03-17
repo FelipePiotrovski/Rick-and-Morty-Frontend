@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import './style.css';
 import MainContainer from './components/MainContainer/maincontainer.js';
 import Loading from './components/loading/loading.js';
@@ -11,8 +11,10 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false); // Alterado para falso inicialmente
   const [removeLoading, setRemoveLoading] = useState(false);
+  const [saveTerm, setSaveTerm] = useState(searchTerm);
 
-  const handleSearch = () => {
+
+  const handleSearch = (page) => {
     setLoading(true); // Definindo o estado de carregamento para verdadeiro ao iniciar a pesquisa
     fetch(`http://127.0.0.1:5000/character?name=${searchTerm}`)
       .then(response => response.json())
@@ -21,6 +23,9 @@ function App() {
           setCharacters(data.data);
           setTotalPages(data.total_pages);
           setErrorMessage('');
+          setSaveTerm(searchTerm)
+
+          console.log(searchTerm)
         } else {
           setCharacters([]);
           setErrorMessage(data.message);
@@ -39,7 +44,7 @@ function App() {
   const handlePageChange = (page) => {
     setLoading(true); // Definindo o estado de carregamento para verdadeiro ao iniciar a mudança de página
     setCurrentPage(page);
-    fetch(`http://127.0.0.1:5000/character?name=${searchTerm}&page=${page}`)
+    fetch(`http://127.0.0.1:5000/character?name=${saveTerm}&page=${page}`)
       .then(response => response.json())
       .then(data => {
         if (data.success) {
@@ -53,7 +58,7 @@ function App() {
       .catch(error => {
         console.error('Error fetching data:', error);
         setCharacters([]);
-        setErrorMessage('Error while searching for characters. Please, try again later!.');
+        setErrorMessage('Error while searching for characters. Please, try again later!');
       })
       .finally(() => {
         setLoading(false); // Definindo o estado de carregamento para falso após a conclusão da mudança de página
