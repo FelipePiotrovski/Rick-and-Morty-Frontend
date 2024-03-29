@@ -1,5 +1,5 @@
 import styles from './loading.module.css';
-import loadingImage from './loading.jpeg';
+import loadingImage from '../../img/loading.jpeg';
 
 function Loading() {
 

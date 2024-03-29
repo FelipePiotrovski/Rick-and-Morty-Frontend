@@ -1,4 +1,5 @@
 import React from 'react';
+import './characterscard.css';
 
 function CharactersCard({ characters, handleCharacterClick }) {
 
